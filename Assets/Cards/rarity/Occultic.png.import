@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi6tltifatwdq"
-path="res://.godot/imported/Rare.png-608e7418cdc91024fad99dbabcc74272.ctex"
+uid="uid://cg2c7fy4nc8mr"
+path="res://.godot/imported/Occultic.png-03b661a82eda5efa07b1deed58742c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Card Border/Rare.png"
-dest_files=["res://.godot/imported/Rare.png-608e7418cdc91024fad99dbabcc74272.ctex"]
+source_file="res://Assets/Cards/rarity/Occultic.png"
+dest_files=["res://.godot/imported/Occultic.png-03b661a82eda5efa07b1deed58742c83.ctex"]
 
 [params]
 
