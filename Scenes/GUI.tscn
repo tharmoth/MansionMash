@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b245rn6c44dps"]
+[gd_scene load_steps=3 format=3 uid="uid://cggaresjve3kx"]
 
 [ext_resource type="FontFile" uid="uid://db42tov38et3d" path="res://menu/yoster.ttf" id="1_nvgox"]
+[ext_resource type="Script" path="res://Scenes/GUI.gd" id="1_nyw3r"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nyw3r")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -89,3 +91,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_nvgox")
 text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button3Quit" to="." method="_on_button_3_quit_pressed"]
