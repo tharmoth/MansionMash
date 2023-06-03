@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bgnma1kniback"]
+
+[node name="CardBuilder" type="Node2D"]
