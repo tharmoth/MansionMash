@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://d2v1axcfsdmb8"]
+[gd_scene load_steps=3 format=3 uid="uid://d2v1axcfsdmb8"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/character_modifications.gd" id="1_75gv1"]
+[ext_resource type="Texture2D" uid="uid://dxkgc4cvw8hw2" path="res://Assets/character/potentialMan2ItemSlotHighlight.png" id="2_d1hc1"]
+
+[node name="character" type="Node2D"]
+script = ExtResource("1_75gv1")
+
+[node name="PotentialMan2ItemSlotHighlight" type="Sprite2D" parent="."]
+position = Vector2(45, 41)
+texture = ExtResource("2_d1hc1")
