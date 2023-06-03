@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+# check to see if character's hands are holding anything
 var hand1Fill = false
 var hand2Fill = false
 var necklace = false
