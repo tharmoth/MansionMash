@@ -8,3 +8,9 @@ offset_bottom = 64.0
 scale = Vector2(4, 4)
 pivot_offset = Vector2(24, 32)
 script = ExtResource("1_l7ulf")
+
+[node name="cardBase" type="Sprite2D" parent="."]
+
+[node name="cardRarityBoarder" type="Sprite2D" parent="."]
+
+[node name="CardItem" type="Sprite2D" parent="."]

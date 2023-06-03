@@ -1,6 +1,8 @@
 extends MarginContainer
 
 @onready var cardDataBase = preload("res://Assets/Cards/Card_Database.gd")
+var cardName = "topHatOld"
+@onready var 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
