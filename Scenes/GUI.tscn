@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cggaresjve3kx"]
+[gd_scene load_steps=3 format=3 uid="uid://b245rn6c44dps"]
 
 [ext_resource type="FontFile" uid="uid://db42tov38et3d" path="res://menu/yoster.ttf" id="1_nvgox"]
 [ext_resource type="Script" path="res://Scenes/GUI.gd" id="1_nyw3r"]
@@ -70,7 +70,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_nvgox")
 theme_override_font_sizes/font_size = 36
-text = "Monster Mash"
+text = "Manshion Mash"
 horizontal_alignment = 1
 vertical_alignment = 1
 
