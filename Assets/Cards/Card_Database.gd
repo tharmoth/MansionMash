@@ -1,3 +1,3 @@
-#BookInfo = ["type","theme"]
-#TrinketInfo = ["type","theme"]
-#HatInfo = ["type","theme"]
+#BookInfo = ["type","theme","rarity","name",]
+#TrinketInfo = ["type","theme","rarity","name","passiveType"]
+#HatInfo = ["type","theme","rarity","name"]
