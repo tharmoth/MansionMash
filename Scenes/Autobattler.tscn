@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d24uosahx5q3h"]
+
+[ext_resource type="Texture2D" uid="uid://t6ej7dacl2is" path="res://Assets/mansion.jpg" id="1_2gyps"]
+
+[node name="Autobattler" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.75, 324.25)
+scale = Vector2(4.17636, 3.54918)
+texture = ExtResource("1_2gyps")
