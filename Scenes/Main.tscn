@@ -1,10 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbcoke87n7ggi"]
+[gd_scene load_steps=2 format=3 uid="uid://bsj6i4yneq8rb"]
 
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://b245rn6c44dps" path="res://Scenes/GUI.tscn" id="1_mxseb"]
-=======
-[ext_resource type="PackedScene" path="res://Scenes/GUI.tscn" id="1_mxseb"]
->>>>>>> 598b481fc049e97dcfadf22fd9c3ccf05d55f0f9
+[ext_resource type="PackedScene" uid="uid://cggaresjve3kx" path="res://Scenes/GUI.tscn" id="1_mxseb"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -13,8 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="GUI" parent="." instance=ExtResource("1_mxseb")]
 layout_mode = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
