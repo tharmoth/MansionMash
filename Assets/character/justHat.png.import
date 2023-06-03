@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8tfh7dk45qu5"
-path="res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"
+uid="uid://ygdlutt4mqww"
+path="res://.godot/imported/justHat.png-f527c54a5d8f1643cca13913c0c168bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character/potentialMan2TopHat.png"
-dest_files=["res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"]
+source_file="res://Assets/character/justHat.png"
+dest_files=["res://.godot/imported/justHat.png-f527c54a5d8f1643cca13913c0c168bd.ctex"]
 
 [params]
 

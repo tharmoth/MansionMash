@@ -1,11 +1,8 @@
-extends CharacterBody2D
+extends MarginContainer
 
-# check to see if character's hands are holding anything
-var hand1Fill = false
-var hand2Fill = false
-var necklace = false
-var hat = false
-
+@onready var cardDataBase = preload("res://Assets/Cards/Card_Database.gd")
+var cardName = "topHatOld"
+@onready var 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

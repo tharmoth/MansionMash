@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8tfh7dk45qu5"
-path="res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"
+uid="uid://c4ktodqsr8rka"
+path="res://.godot/imported/title pending.png-5ad92947c644dad6f16b7ccc3f29988b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character/potentialMan2TopHat.png"
-dest_files=["res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"]
+source_file="res://menu/title pending.png"
+dest_files=["res://.godot/imported/title pending.png-5ad92947c644dad6f16b7ccc3f29988b.ctex"]
 
 [params]
 
