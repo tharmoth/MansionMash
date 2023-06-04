@@ -20,7 +20,7 @@ func _ready():
 func initalize():
 	var cardSize = Vector2($cardBase.texture.get_width(), $cardBase.texture.get_height())
 	if rarity != "starter":
-		var boarderImage = str("res://Assets/Cards/rarity/",rarity)
+		var boarderImage = str("res://Assets/Cards/rarity/",rarity,".png")
 		$cardRarityBoarder.texture = load(boarderImage)
 		$cardRarityBoarder.scale *= cardSize/$cardRarityBoarder.texture.get_size()	
 	$cardItem.texture = load(cardImage)
