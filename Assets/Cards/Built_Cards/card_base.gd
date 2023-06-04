@@ -9,14 +9,22 @@ var cardName = "topHatOld"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	var cardSize = get_rect()
+	var cardSize = size
 	if rarity != "starter":
 		var boarderImage = str("res://Assets/Cards/rarity/",rarity)
-		$cardRarityBoarder.scale *= cardSize/$cardRarityBoarder.texture.get_size()
 		$cardRarityBoarder.texture = load(boarderImage)
-	$CardItem.scale *= cardSize/$CardItem.texture.get_size()
-	$CardItem.texture = load(cardImage)
-	
+		$cardRarityBoarder.scale *= cardSize/$cardRarityBoarder.texture.get_size()	
+	$cardItem.texture = load(cardImage)
+	$cardItem.scale *= cardSize/$cardItem.texture.get_size()/3
+	$cardItem.offset.x = size.x*2
+	$cardItem.offset.y = size.y
+	$cardBase/Name.text = cardInfo[3]
+	$cardBase/Type.text = str("Item: ",cardInfo[0])
+	$cardBase/Theme.text = cardInfo[1]
+	$cardBase/Property1.text = str(cardInfo[4])
+	$cardBase/PropertyValue1.text = str(cardInfo[5])
+	#$cardBase/Property2.text = str(cardInfo[6])
+	#$cardBase/PropertyValue2.text = str(cardInfo[7])
 	
 
 
