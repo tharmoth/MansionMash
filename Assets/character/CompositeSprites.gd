@@ -9,8 +9,7 @@ var neck_spritesheet = {
 }
 
 var handL_spritesheet = {
-	0: preload("res://Assets/character/crincketbathandle1.png"),
-	1: preload("res://Assets/character/CrincketbatLength1.png")
+	0: preload("res://Assets/character/crincketbathandle1.png")
 }
 
 var handR_spritesheet = {
