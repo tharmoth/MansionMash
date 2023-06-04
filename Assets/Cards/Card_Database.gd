@@ -41,5 +41,5 @@ const DATA = {
 }
 
 var obtained_cards = ["topHatOld", "rosaryOld", "tomeOld", "cricketBat"]
-var equpped_cards = obtained_cards
+var equipped_cards = obtained_cards
 var library_cards = []

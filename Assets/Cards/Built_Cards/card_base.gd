@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var cardDataBase = CardDatabase
-var cardName = cardDataBase.equpped_cards[RandomNumberGenerator.new().randi_range(0, cardDataBase.equpped_cards.size() - 1)] :
+var cardName = cardDataBase.equipped_cards[RandomNumberGenerator.new().randi_range(0, cardDataBase.equipped_cards.size() - 1)] :
 	set(value): 
 		cardName = value
 		cardInfo = cardDataBase.DATA[cardName]
