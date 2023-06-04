@@ -12,13 +12,13 @@ const DATA = {
 	"foxMask" :
 		["hat","yokai","common","Mask of the Fox","Evasion",10,"Armor",4],#Evasion +10%
 	"wolfMask" :
-		["hat","yokai","common","Mask of the Fox","pDamage",5,"Armor",4],
+		["hat","yokai","common","Mask of the Wolf","pDamage",5,"Armor",4],
 	"tigerMask" :
-		["hat","yokai","uncommon","Mask of the Fox","pDamage",10,"Armor",6],
+		["hat","yokai","uncommon","Mask of the Tiger","pDamage",10,"Armor",6],
 	"bearMask" :
-		["hat","yokai","uncommon","Mask of the Fox","Evasion",-10,"Armor",20],
+		["hat","yokai","uncommon","Mask of the Bear","Evasion",-10,"Armor",20],
 	"demonMask" :
-		["hat","yokai","rare","Mask of the Fox","Evasion",10,"Armor",4],
+		["hat","yokai","rare","Mask of the Demon","pDamage",25,"Armor",0],
 	"cricketBat" :
 		["weapon","general","starter","Child's Cricket Bat","NONE",0,"pDamage",2], #pDamage = physical Damage
 	"rosaryOld" :
@@ -30,7 +30,7 @@ const DATA = {
 	"tomeOld" :
 		["book","general","starter","Grandpa's Journal","Grit",2,"NONE",0],
 	"cookbookElder" :
-		["book","eldritch","common","How to Cook Like Cthulhu","Grit",-1,"Elder Eater",10], #Recover health after killing an eldritch enemy
+		["book","eldritch","common","Cook Like Cthulhu!","Grit",-1,"Elder Eater",10], #Recover health after killing an eldritch enemy
 	"cookbookDemon" :
 		["book","biblical","common","Yummy Demons!","Grit",-1,"Demon Eater",10], #Recover health after killing a demonic enemy
 	"cookbookYokai" :
@@ -38,7 +38,7 @@ const DATA = {
 	"lesserKey" :
 		["book","biblical","occultic","Lesser Key of Solomon","Grit",-5,"Accuracy", 20], #Accuracy plus 20%
 	"necronomicon" :
-		["book","eldritch","occultic","The Necronomicon","Grit",-10,"Damage Multiplier",4],
+		["book","eldritch","occultic","The Necronomicon","Grit",-10,"Dmg Mult",4],
 	"hyakki" :
 		["book","yokai","occultic","Hyakki Yagyo Zu","Grit",10,"Evasion",4]
 }
