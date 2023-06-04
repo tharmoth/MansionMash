@@ -1,7 +1,7 @@
 extends Node2D
 
 #Grit is Sanity armor
-enum {topHatOld,foxMask,wolfMask,tigerMask,bearMask,demonMask,cricketBat,rosaryOld,eldSigil,tomeOld,cookbookElder,cookbookDemon,cookbookYokai,lesserKey,necronomicon,hyakki}
+enum {topHatOld,foxMask,wolfMask,tigerMask,bearMask,demonMask,friarHat,bishopHat,popeHat,squidHat,squidHood,squidHead,squidGod,cricketBat,rosaryOld,eldSigil,tomeOld,cookbookElder,cookbookDemon,cookbookYokai,lesserKey,necronomicon,hyakki}
 
 const DATA = {
 	"topHatOld" :
@@ -11,11 +11,25 @@ const DATA = {
 	"wolfMask" :
 		["hat","yokai","common","Mask of the Wolf","pDamage",5,"Armor",4],
 	"tigerMask" :
-		["hat","yokai","uncommon","Mask of the Tiger","pDamage",10,"Armor",6],
+		["hat","yokai","uncommon","Mask of the Tiger","Quickness",15,"Armor",6],#quickness increases speed by %
 	"bearMask" :
 		["hat","yokai","uncommon","Mask of the Bear","Evasion",-10,"Armor",20],
 	"demonMask" :
 		["hat","yokai","rare","Mask of the Demon","pDamage",25,"Armor",0],
+	"friarHat" :
+		["hat","biblical","common","Friar's Hat","Evasion",-10,"Armor",10],
+	"bishopHat" :
+		["hat","biblical","rare","Bishop's Hat","Evasion",-20,"Armor",25],
+	"popeHat" :
+		["hat","biblical","occultic","The Zucchetto","Grit",40,"Armor",10],
+	"squidHat" :
+		["hat","eldritch","common","Cthulhu Fair Hat","Grit",-1,"Armor",5],
+	"squidHood" :
+		["hat","eldritch","uncommon","Cthulhu Cult Hood","Grit",-3,"Armor",10],
+	"squidHead" :
+		["hat","eldritch","rare","Head of an Elder","Grit",-6,"Armor",20],
+	"squidGod" :
+		["hat","eldritch","occultic","Head of Cthulhu","Grit",-10,"Armor",40],	
 	"cricketBat" :
 		["weapon","general","starter","Child's Cricket Bat","NONE",0,"pDamage",2], #pDamage = physical Damage
 	"rosaryOld" :
@@ -33,7 +47,7 @@ const DATA = {
 	"cookbookYokai" :
 		["book","yokai","common","Sugoi Yokai Tabemono","Grit",-1,"Yokai Eater",10], #Recover health after killing a Yokai enemy
 	"lesserKey" :
-		["book","biblical","occultic","Lesser Key of Solomon","Grit",-5,"Accuracy", 20], #Accuracy plus 20%
+		["book","biblical","occultic","Lesser Key of Solomon","Grit",-5,"Accuracy", 30], #Accuracy plus 20%
 	"necronomicon" :
 		["book","eldritch","occultic","The Necronomicon","Grit",-10,"Dmg Mult",4],
 	"hyakki" :
