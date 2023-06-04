@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var cardDataBase = CardDatabase
-var cardName = cardDataBase.obtained_cards[RandomNumberGenerator.new().randi_range(0, cardDataBase.obtained_cards.size() - 1)] :
+var cardName = cardDataBase.equpped_cards[RandomNumberGenerator.new().randi_range(0, cardDataBase.equpped_cards.size() - 1)] :
 	set(value): 
 		cardName = value
 		cardInfo = cardDataBase.DATA[cardName]
@@ -20,7 +20,7 @@ func _ready():
 func initalize():
 	var cardSize = Vector2($cardBase.texture.get_width(), $cardBase.texture.get_height())
 	if rarity != "starter":
-		var boarderImage = str("res://Assets/Cards/rarity/",rarity)
+		var boarderImage = str("res://Assets/Cards/rarity/",rarity,".png")
 		$cardRarityBoarder.texture = load(boarderImage)
 		$cardRarityBoarder.scale *= cardSize/$cardRarityBoarder.texture.get_size()	
 	$cardItem.texture = load(cardImage)
