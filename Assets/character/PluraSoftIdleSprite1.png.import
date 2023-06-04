@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi6tltifatwdq"
-path="res://.godot/imported/Rare.png-d1f5f7632c1fdcb7b269a25c157fbd56.ctex"
+uid="uid://bryecs8ivudac"
+path="res://.godot/imported/PluraSoftIdleSprite1.png-79a61ec7c296cda7b473e513491554a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/rarity/Rare.png"
-dest_files=["res://.godot/imported/Rare.png-d1f5f7632c1fdcb7b269a25c157fbd56.ctex"]
+source_file="res://Assets/character/PluraSoftIdleSprite1.png"
+dest_files=["res://.godot/imported/PluraSoftIdleSprite1.png-79a61ec7c296cda7b473e513491554a0.ctex"]
 
 [params]
 
