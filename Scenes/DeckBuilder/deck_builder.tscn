@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c56vxjdmjkmm6"]
+[gd_scene load_steps=6 format=3 uid="uid://c56vxjdmjkmm6"]
 
 [ext_resource type="Script" path="res://Scenes/DeckBuilder/deck_builder_gui.gd" id="1_5wvss"]
+[ext_resource type="PackedScene" uid="uid://cpcgnx7oe1weu" path="res://Scenes/DeckBuilder/gui_card.tscn" id="2_wru6x"]
 [ext_resource type="PackedScene" uid="uid://b8ig80oj0ie3a" path="res://Scenes/DeckBuilder/card_producer.tscn" id="4_5yi47"]
 [ext_resource type="Texture2D" uid="uid://2sbyg8j2yyag" path="res://Assets/Home.png" id="5_n3p47"]
 [ext_resource type="PackedScene" uid="uid://byn4h5l16uu8l" path="res://Scenes/DeckBuilder/card_consumer.tscn" id="6_ish2i"]
@@ -14,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_5wvss")
+gui_card = ExtResource("2_wru6x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(50, 50)
@@ -28,62 +30,68 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="ReturnButton" type="Button" parent="MarginContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Return Home"
-icon = ExtResource("5_n3p47")
+theme_override_constants/separation = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 120
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HeadLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Head"
-
-[node name="CardConsumer" parent="MarginContainer/VBoxContainer/HBoxContainer/HeadLabel" instance=ExtResource("6_ish2i")]
-position = Vector2(20, 61)
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NeckLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Neck"
-
-[node name="CardConsumer" parent="MarginContainer/VBoxContainer/HBoxContainer2/NeckLabel" instance=ExtResource("6_ish2i")]
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Left" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Left"
-
-[node name="CardConsumer" parent="MarginContainer/VBoxContainer/HBoxContainer3/Left" instance=ExtResource("6_ish2i")]
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Right" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-text = "Right"
-
-[node name="CardConsumer" parent="MarginContainer/VBoxContainer/HBoxContainer4/Right" instance=ExtResource("6_ish2i")]
-
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Deck"
 
-[node name="CardProducer" parent="MarginContainer/Label" instance=ExtResource("4_5yi47")]
+[node name="CardProducer" parent="MarginContainer/HBoxContainer/Label" instance=ExtResource("4_5yi47")]
 position = Vector2(20, 60)
 
-[node name="CardConsumer" parent="MarginContainer/Label" instance=ExtResource("6_ish2i")]
+[node name="CardConsumer" parent="MarginContainer/HBoxContainer/Label" instance=ExtResource("6_ish2i")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 120
+
+[node name="HeadContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HeadLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HeadContainer"]
+layout_mode = 2
+text = "Head"
+
+[node name="CardConsumer" parent="MarginContainer/HBoxContainer/VBoxContainer/HeadContainer/HeadLabel" instance=ExtResource("6_ish2i")]
+position = Vector2(20, 61)
+
+[node name="NeckContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="NeckLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/NeckContainer"]
+layout_mode = 2
+text = "Neck"
+
+[node name="CardConsumer" parent="MarginContainer/HBoxContainer/VBoxContainer/NeckContainer/NeckLabel" instance=ExtResource("6_ish2i")]
+
+[node name="LeftContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Left" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LeftContainer"]
+layout_mode = 2
+text = "Left"
+
+[node name="CardConsumer" parent="MarginContainer/HBoxContainer/VBoxContainer/LeftContainer/Left" instance=ExtResource("6_ish2i")]
+
+[node name="RightContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Right" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/RightContainer"]
+layout_mode = 2
+text = "Right"
+
+[node name="CardConsumer" parent="MarginContainer/HBoxContainer/VBoxContainer/RightContainer/Right" instance=ExtResource("6_ish2i")]
+
+[node name="ReturnButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+text = "Return Home  "
+icon = ExtResource("5_n3p47")
