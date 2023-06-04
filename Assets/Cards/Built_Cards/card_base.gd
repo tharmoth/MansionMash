@@ -4,7 +4,7 @@ extends MarginContainer
 var cardName = "topHatOld" :
 	set(value): 
 		cardName = value
-		cardInfo = cardDataBase.DATA[cardDataBase.get(cardName)]
+		cardInfo = cardDataBase.DATA[cardName]
 		cardImage = str("res://Assets/Cards/",cardInfo[0],"/",cardName,".png")
 		rarity = cardInfo[2]
 		initalize()

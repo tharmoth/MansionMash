@@ -8,10 +8,14 @@ var click_offset : Vector2
 var card_consumer = null
 var static_card = false
 
+var database = preload("res://Assets/Cards/Card_Database.gd").new()
+
 func _ready():
 	input_event.connect(_on_input_event)
-	if RandomNumberGenerator.new().randi_range(0, 1) == 0:
-		$CardBase.cardName = "rosaryOld"
+
+	var cardName = database.DATA.keys()[RandomNumberGenerator.new().randi_range(0, database.DATA.size() - 1)]
+	print(cardName)
+	$CardBase.cardName = cardName
 
 func _physics_process(delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and dragging:
