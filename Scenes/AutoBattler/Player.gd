@@ -70,7 +70,6 @@ func subtract_health(value: int) -> void:
 		emit_signal("dead")
 		queue_free()
 
-
 func _on_continue_button_pressed():
 	if state == States.IDLE:
 		continue_button.disabled = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dws7686ls1eyp"
-path="res://.godot/imported/cookbookElder.png-cc3bf76bad89d3aee5a14aba579c9956.ctex"
+uid="uid://rtg0o6b1hq5k"
+path="res://.godot/imported/window.png-9269117c8439c65de1d1a3b508c88e06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/book/cookbookElder.png"
-dest_files=["res://.godot/imported/cookbookElder.png-cc3bf76bad89d3aee5a14aba579c9956.ctex"]
+source_file="res://Assets/window.png"
+dest_files=["res://.godot/imported/window.png-9269117c8439c65de1d1a3b508c88e06.ctex"]
 
 [params]
 
