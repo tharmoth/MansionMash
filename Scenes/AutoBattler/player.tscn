@@ -9,7 +9,6 @@ radius = 100.0
 [node name="Player" type="Area2D"]
 position = Vector2(417, 374)
 script = ExtResource("1_dh7fh")
-damage = 20
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,5 +22,4 @@ texture = ExtResource("2_gsmqb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
