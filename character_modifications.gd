@@ -1,32 +1,27 @@
 extends Node2D
 
-@onready var man := $PotentialMan2ItemSlotHighlight as Sprite2D
-@onready var tophat := $JustHat as Sprite2D
-@onready var manWithHat := $PotentialMan2TopHat as Sprite2D
-
-@onready var hatSprite = $CompositeSprites/Hat
+@onready var headSprite = $CompositeSprites/Head
 @onready var neckSprite = $CompositeSprite/Neck
 @onready var handLSprite = $CompositeSprites/HandL
 @onready var handRSprite = $CompositeSprites/HandR
 
-const composite_sprites = preload("res://CompositeSpritesheets/CompositeSprites.gd")
+const composite_sprites = preload("res://Assets/character/CompositeSprites.gd")
 
-var curr_hat: int = 0
+var curr_head: int = 0
 var curr_neck: int = 0
 var curr_left: int = 0
 var curr_right: int = 0
 
-#func _ready():
-
-# check to see if character's hands are holding anything
-var handLFill = false
-var handRFill = false
-var neckFill = false
-var hatFill = false
+func _ready():
+	headSprite.texture = composite_sprites.head_spritesheet[0]
+	neckSprite.texture = composite_sprites.neck_spritesheet[0]
+	handLSprite.texture = composite_sprites.left_spritesheet[0]
+	handRSprite.texture = composite_sprites.right_spritesheet[0]
+	
 
 func _on_hat_dropped():
-	curr_hat = (curr_hat + 1) % composite_sprites.head_spritesheet.size()
-	curr_hat.texture = composite_sprites.head_spritesheet[curr_hat]
+	curr_head = (curr_head + 1) % composite_sprites.head_spritesheet.size()
+	curr_head.texture = composite_sprites.head_spritesheet[curr_head]
 
 func _on_left_dropped():
 	curr_left = (curr_left + 1) % composite_sprites.left_spritesheet.size()

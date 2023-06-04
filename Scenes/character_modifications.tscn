@@ -1,26 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2v1axcfsdmb8"]
+[gd_scene load_steps=4 format=3 uid="uid://d2v1axcfsdmb8"]
 
 [ext_resource type="Script" path="res://character_modifications.gd" id="1_w7qbp"]
-[ext_resource type="Texture2D" uid="uid://dxkgc4cvw8hw2" path="res://Assets/character/potentialMan2ItemSlotHighlight.png" id="2_d1hc1"]
-[ext_resource type="Texture2D" uid="uid://ygdlutt4mqww" path="res://Assets/character/justHat.png" id="3_5v8gv"]
-[ext_resource type="Texture2D" uid="uid://cjpmna6ms0p4m" path="res://Assets/character/potentialMan2TopHat.png" id="4_am7ld"]
-[ext_resource type="Script" path="res://CompositeSpritesheets/CompositeSprites.gd" id="5_xoj1s"]
+[ext_resource type="Texture2D" uid="uid://bryecs8ivudac" path="res://Assets/character/PluraSoftIdleSprite1.png" id="3_ok4vk"]
+
+[sub_resource type="GDScript" id="GDScript_8di5a"]
+script/source = "extends Node
+
+const head_spritesheet = {
+	0: [\"hat\", preload(\"res://Assets/character/justHat.png\")]
+}
+
+const right_spritesheet = {
+	0: [\"cricketBat\", null]
+}
+
+const neck_spritesheet = {
+	0: [\"rosaryOld\", null]
+}
+
+const left_spritesheet = {
+	0: [\"tomeOld\", null]
+}
+"
 
 [node name="character" type="Node2D"]
+position = Vector2(186, -112)
 scale = Vector2(1, 1.00602)
 script = ExtResource("1_w7qbp")
 
-[node name="PotentialMan2ItemSlotHighlight" type="Sprite2D" parent="."]
-position = Vector2(46, 58.6469)
-texture = ExtResource("2_d1hc1")
-
-[node name="JustHat" type="Sprite2D" parent="."]
-position = Vector2(39, 17.8923)
-texture = ExtResource("3_5v8gv")
-
-[node name="PotentialMan2TopHat" type="Sprite2D" parent="."]
-position = Vector2(125, 74.5512)
-texture = ExtResource("4_am7ld")
-
 [node name="CompositeSprites" type="Node2D" parent="."]
-script = ExtResource("5_xoj1s")
+script = SubResource("GDScript_8di5a")
+
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(-113, 154.072)
+texture = ExtResource("3_ok4vk")
+hframes = 4
+vframes = 3
+
+[node name="Neck" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(-113, 155.066)
+texture = ExtResource("3_ok4vk")
+hframes = 4
+vframes = 3
+
+[node name="HandL" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(-151, 143.138)
+texture = ExtResource("3_ok4vk")
+hframes = 4
+vframes = 3
+
+[node name="HandR" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(-77, 153.078)
+texture = ExtResource("3_ok4vk")
+hframes = 4
+vframes = 3
