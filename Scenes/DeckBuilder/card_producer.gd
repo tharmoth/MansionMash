@@ -8,8 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if top_of_deck == null:
+	if top_of_deck == null and CardDatabase.obtained_cards.size() > 0:
 		top_of_deck = DragAndDropCard.instantiate()
+		var name = CardDatabase.obtained_cards[RandomNumberGenerator.new().randi_range(0, CardDatabase.obtained_cards.size() - 1)]
+		top_of_deck.get_node("CardBase").cardName = name
+		CardDatabase.obtained_cards.remove_at(CardDatabase.obtained_cards.find(name))
 		top_of_deck.position = global_position
 		get_node("/root/GUI").add_child(top_of_deck)
 

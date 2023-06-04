@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name DragAndDropCard
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -21,6 +22,10 @@ func _physics_process(delta):
 			
 			# used for cards parented to the gui
 			if static_card:
+				if get_parent().get_parent().name == "UseContainer":
+					CardDatabase.equipped_cards.remove_at(CardDatabase.equipped_cards.find(cardName))
+				elif get_parent().get_parent().name == "LibraryContainer":
+					CardDatabase.library_cards.remove_at(CardDatabase.library_cards.find(cardName))
 				get_parent().get_parent().remove_child(get_parent())
 			else:
 				get_parent().remove_child(self)
@@ -37,4 +42,9 @@ func _on_input_event(viewport, event, shape_idx):
 		
 func in_deck(consumer):
 	card_consumer = consumer
-	
+
+var cardName :
+	get:
+		return $CardBase.cardName
+	set(value):
+		$CardBase.cardName = value

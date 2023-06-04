@@ -40,6 +40,6 @@ const DATA = {
 		["book","yokai","occultic","Hyakki Yagyo Zu","Grit",10,"Evasion",4]
 }
 
-var obtained_cards = ["topHatOld", "rosaryOld", "tomeOld", "cricketBat"]
-var equipped_cards = obtained_cards
+var obtained_cards = ["rosaryOld"]
+var equipped_cards = ["topHatOld", "rosaryOld", "tomeOld", "cricketBat"]
 var library_cards = []
