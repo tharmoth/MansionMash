@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjpmna6ms0p4m"
-path="res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"
+uid="uid://bls1pj0ag0v3y"
+path="res://.godot/imported/Arrow.png-b8e6da00c37ab648b87d046a161ddee5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character/potentialMan2TopHat.png"
-dest_files=["res://.godot/imported/potentialMan2TopHat.png-4fa226da2e32d52463580affcffca6cd.ctex"]
+source_file="res://Assets/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-b8e6da00c37ab648b87d046a161ddee5.ctex"]
 
 [params]
 

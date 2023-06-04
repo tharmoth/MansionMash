@@ -1,11 +1,13 @@
 extends TileMap
 
+var enemy = preload("res://Scenes/AutoBattler/enemy.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _ready() -> void:
+	for i in 1000:
+		set_pattern(0, Vector2i(i, 0), tile_set.get_pattern(0))
+	
+	for n in range(1000,100000,1000):
+		var my_enemy = enemy.instantiate()
+		add_child(my_enemy)
+		my_enemy.position.x = n
+		my_enemy.position.y = 370
