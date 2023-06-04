@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2v1axcfsdmb8"]
+[gd_scene load_steps=6 format=3 uid="uid://d2v1axcfsdmb8"]
 
 [ext_resource type="Script" path="res://character_modifications.gd" id="1_w7qbp"]
 [ext_resource type="Texture2D" uid="uid://dxkgc4cvw8hw2" path="res://Assets/character/potentialMan2ItemSlotHighlight.png" id="2_d1hc1"]
 [ext_resource type="Texture2D" uid="uid://ygdlutt4mqww" path="res://Assets/character/justHat.png" id="3_5v8gv"]
-[ext_resource type="Texture2D" uid="uid://dc0kyp5jy2sxb" path="res://Assets/character/potentialMan2TopHat.png" id="4_am7ld"]
+[ext_resource type="Texture2D" uid="uid://cjpmna6ms0p4m" path="res://Assets/character/potentialMan2TopHat.png" id="4_am7ld"]
+[ext_resource type="Script" path="res://CompositeSpritesheets/CompositeSprites.gd" id="5_xoj1s"]
 
 [node name="character" type="Node2D"]
 scale = Vector2(1, 1.00602)
@@ -20,3 +21,6 @@ texture = ExtResource("3_5v8gv")
 [node name="PotentialMan2TopHat" type="Sprite2D" parent="."]
 position = Vector2(125, 74.5512)
 texture = ExtResource("4_am7ld")
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+script = ExtResource("5_xoj1s")

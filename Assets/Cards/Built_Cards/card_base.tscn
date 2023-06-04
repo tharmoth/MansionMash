@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://curyms4wweeg6"]
+
+[ext_resource type="Script" path="res://Assets/Cards/Built_Cards/card_base.gd" id="1_l7ulf"]
+[ext_resource type="Texture2D" uid="uid://bymkrm74030cu" path="res://Assets/Cards/Card_Template.png" id="2_vh0sy"]
+
+[node name="CardBase" type="MarginContainer"]
+offset_right = 48.0
+offset_bottom = 64.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(24, 32)
+script = ExtResource("1_l7ulf")
+
+[node name="cardBase" type="Sprite2D" parent="."]
+texture = ExtResource("2_vh0sy")
+centered = false
+offset = Vector2(-8, 0)
+
+[node name="cardRarityBoarder" type="Sprite2D" parent="."]
+
+[node name="CardItem" type="Sprite2D" parent="."]

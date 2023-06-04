@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b245rn6c44dps"]
+[gd_scene load_steps=3 format=3 uid="uid://b245rn6c44dps"]
 
-[ext_resource type="Texture2D" uid="uid://dw0ap304awwgp" path="res://menu/continue.png" id="1_y7sd2"]
+[ext_resource type="FontFile" uid="uid://db42tov38et3d" path="res://menu/yoster.ttf" id="1_nvgox"]
+[ext_resource type="Script" path="res://Scenes/GUI.gd" id="1_nyw3r"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nyw3r")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -22,37 +24,73 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/CenterContainer/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Test Button"
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Hello"
+theme_override_constants/separation = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_nvgox")
+theme_override_font_sizes/font_size = 36
+text = "Mansion Mash"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_y7sd2")
-stretch_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_nvgox")
+text = "Play"
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+[node name="Button2Settings" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_nvgox")
+text = "Settings"
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer"]
+[node name="Button3Quit" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_nvgox")
+text = "Quit"
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button3Quit" to="." method="_on_button_3_quit_pressed"]

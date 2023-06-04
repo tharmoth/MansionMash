@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg2c7fy4nc8mr"
-path="res://.godot/imported/Occultic.png-5033bb699257a6654ec827747f2ecaa7.ctex"
+uid="uid://bxrr71gxoipvq"
+path="res://.godot/imported/options.png-25f3087cc18b3321189ddc460c5a3a3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Card Border/Occultic.png"
-dest_files=["res://.godot/imported/Occultic.png-5033bb699257a6654ec827747f2ecaa7.ctex"]
+source_file="res://menu/options.png"
+dest_files=["res://.godot/imported/options.png-25f3087cc18b3321189ddc460c5a3a3c.ctex"]
 
 [params]
 

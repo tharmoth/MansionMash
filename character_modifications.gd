@@ -1,8 +1,22 @@
-extends CharacterBody2D
+extends Node2D
 
 @onready var man := $PotentialMan2ItemSlotHighlight as Sprite2D
 @onready var tophat := $JustHat as Sprite2D
 @onready var manWithHat := $PotentialMan2TopHat as Sprite2D
+
+@onready var hatSprite = $CompositeSprites/Hat
+@onready var neckSprite = $CompositeSprite/Neck
+@onready var handLSprite = $CompositeSprites/HandL
+@onready var handRSprite = $CompositeSprites/HandR
+
+const composite_sprites = preload("res://CompositeSpritesheets/CompositeSprites.gd")
+
+var curr_hat: int = 0
+var curr_neck: int = 0
+var curr_left: int = 0
+var curr_right: int = 0
+
+#func _ready():
 
 # check to see if character's hands are holding anything
 var handLFill = false
@@ -11,42 +25,17 @@ var neckFill = false
 var hatFill = false
 
 func _on_hat_dropped():
-	if hatFill == true:
-		slot_error()
-	hatFill = true
-	queue_free()
-	return -1
+	curr_hat = (curr_hat + 1) % composite_sprites.head_spritesheet.size()
+	curr_hat.texture = composite_sprites.head_spritesheet[curr_hat]
 
 func _on_left_dropped():
-	if handLFill == true:
-		slot_error()
-	handLFill = true
-	queue_free()
-	return -1
+	curr_left = (curr_left + 1) % composite_sprites.left_spritesheet.size()
+	curr_left.texture = composite_sprites.left_spritesheet[curr_left]
 
 func _on_right_dropped():
-	if handRFill == true:
-		slot_error()
-	handRFill = true
-	queue_free()
-	return -1
+	curr_right = (curr_right + 1) % composite_sprites.right_spritesheet.size()
+	curr_right.texture = composite_sprites.right_spritesheet[curr_right]
 
 func _on_neck_dropped():
-	if neckFill == true:
-		slot_error()
-	neckFill = true
-	queue_free()
-	return -1
-
-func slot_error():
-	print("You may only fill the slot with one item at a time")
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	curr_neck = (curr_neck + 1) % composite_sprites.neck_spritesheet.size()
+	curr_neck.texture = composite_sprites.neck_spritesheet[curr_neck]
