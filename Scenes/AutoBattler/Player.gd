@@ -15,21 +15,28 @@ enum States {IDLE, MOVING, COMBAT}
 
 @onready var hit_timer := $HitTimer as Timer
 @onready var continue_button := get_node("%ContinueButton") as Button
+@onready var return_button := get_node("%ReturnButton") as Button
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var velocity = Vector2()
 	
-	print(state)
-	
 	if state == States.IDLE:
 		continue_button.disabled = false
+		return_button.disabled = false
+
 	if state == States.MOVING:
+		continue_button.disabled = true
+		return_button.disabled = false
 		velocity.x += 1
+
 	if state == States.COMBAT:
 		if targets.is_empty():
 			state = States.IDLE
+		else:
+			continue_button.disabled = true
+			return_button.disabled = true
 
 	else:
 		get_node("%ContinueButton").disabled = false
