@@ -11,13 +11,13 @@ size = Vector2(45, 59)
 [node name="DeckBuilder" type="Node2D"]
 
 [node name="DragAndDropCard" parent="." instance=ExtResource("1_qolrm")]
-position = Vector2(199, 193)
+position = Vector2(165, 109)
 
 [node name="DragAndDropCard2" parent="." instance=ExtResource("1_qolrm")]
-position = Vector2(229, 339)
+position = Vector2(224, 109)
 
 [node name="DragAndDropCard3" parent="." instance=ExtResource("1_qolrm")]
-position = Vector2(377, 284)
+position = Vector2(282, 108)
 
 [node name="TrashPile" type="Area2D" parent="."]
 position = Vector2(87, 236)
@@ -43,4 +43,5 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_tpqnk")
 
 [connection signal="body_entered" from="TrashPile" to="TrashPile" method="_on_body_entered"]
+[connection signal="body_exited" from="TrashPile" to="TrashPile" method="_on_body_exited"]
 [connection signal="body_exited" from="Deck" to="Deck" method="_on_body_exited"]
