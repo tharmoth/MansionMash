@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpcgnx7oe1weu"]
+
+[ext_resource type="PackedScene" uid="uid://083cklb3gw4u" path="res://Scenes/DeckBuilder/drag_and_drop_card.tscn" id="1_ftxys"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DragAndDropCard" parent="." instance=ExtResource("1_ftxys")]
+position = Vector2(20, 60)
