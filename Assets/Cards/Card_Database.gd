@@ -51,7 +51,7 @@ const DATA = {
 	"necronomicon" :
 		["book","eldritch","occultic","The Necronomicon","Grit",-10,"Dmg Mult",4],
 	"hyakki" :
-		["book","yokai","occultic","Hyakki Yagyo Zu","Grit",10,"Evasion",4]
+		["book","yokai","occultic","Hyakki Yagyo Zu","Grit",10,"Evasion",20]
 }
 
 var obtained_cards = ["rosaryOld"]
