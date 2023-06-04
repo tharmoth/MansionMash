@@ -7,10 +7,10 @@ extends Node2D
 
 var composite_sprites = preload("res://Assets/character/CompositeSprites.gd")
 
-var curr_head: int = 0
-var curr_neck: int = 0
-var curr_left: int = 0
-var curr_right: int = 0
+var curr_head = 0
+var curr_neck = 0
+var curr_left = 0
+var curr_right = 0
 
 func _ready():
 	headSprite.texture = composite_sprites.head_spritesheet[0]
@@ -21,7 +21,7 @@ func _ready():
 
 func _on_hat_dropped():
 	curr_head = (curr_head + 1) % composite_sprites.head_spritesheet.size()
-	curr_head.Texture = composite_sprites.head_spritesheet[curr_head]
+	curr_head.texture = composite_sprites.head_spritesheet[curr_head]
 
 func _on_left_dropped():
 	curr_left = (curr_left + 1) % composite_sprites.left_spritesheet.size()
