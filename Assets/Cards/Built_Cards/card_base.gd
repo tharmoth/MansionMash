@@ -21,10 +21,12 @@ func _ready():
 	$cardBase/Name.text = cardInfo[3]
 	$cardBase/Type.text = str("Item: ",cardInfo[0])
 	$cardBase/Theme.text = cardInfo[1]
-	$cardBase/Property1.text = str(cardInfo[4])
-	$cardBase/PropertyValue1.text = str(cardInfo[5])
-	#$cardBase/Property2.text = str(cardInfo[6])
-	#$cardBase/PropertyValue2.text = str(cardInfo[7])
+	if cardInfo[4] != "NONE":
+		$cardBase/Property1.text = str(cardInfo[4])
+		$cardBase/PropertyValue1.text = str(cardInfo[5])
+	if cardInfo[0] != "trinket" && cardInfo[6]!="NONE":
+		$cardBase/Property2.text = str(cardInfo[6])
+		$cardBase/PropertyValue2.text = str(cardInfo[7])
 	
 
 

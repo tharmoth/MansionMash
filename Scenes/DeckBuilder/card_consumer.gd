@@ -12,7 +12,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.has_method("in_deck"):
-		body.in_deck(self)
+		body.in_deck(null)
 
 func eat_card():
 	consumed_card.emit()
