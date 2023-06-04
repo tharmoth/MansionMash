@@ -43,3 +43,6 @@ const DATA = {
 var obtained_cards = ["rosaryOld"]
 var equipped_cards = ["topHatOld", "rosaryOld", "tomeOld", "cricketBat"]
 var library_cards = []
+
+# I'm just putting this here cuz it's global and i'm lazy.
+var selected_card = null

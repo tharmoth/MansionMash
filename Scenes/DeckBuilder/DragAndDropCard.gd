@@ -6,9 +6,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var dragging = false
 var click_offset : Vector2
-var card_consumer = null
 var static_card = false
 
+var card_consumers = []
 
 func _ready():
 	input_event.connect(_on_input_event)
@@ -16,9 +16,10 @@ func _ready():
 func _physics_process(delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and dragging:
 		dragging = false
+		CardDatabase.selected_card = null
 		z_index = 0
-		if card_consumer != null: 
-			card_consumer.eat_card(self)
+		if card_consumers.size() > 0: 
+			card_consumers[0].eat_card(self)
 			
 			# used for cards parented to the gui
 			if static_card:
@@ -33,15 +34,18 @@ func _physics_process(delta):
 	if dragging:
 		position = get_viewport().get_mouse_position() + click_offset
 
-
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and CardDatabase.selected_card == null:
 		z_index = 1
 		dragging = true
 		click_offset = position - get_viewport().get_mouse_position()
+		CardDatabase.selected_card = self
 		
-func in_deck(consumer):
-	card_consumer = consumer
+func add_consumer(consumer):
+	card_consumers.append(consumer)
+	
+func remove_consumer(consumer):
+	card_consumers.remove_at(card_consumers.find(consumer))
 
 var cardName :
 	get:
