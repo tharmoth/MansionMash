@@ -5,7 +5,7 @@ extends Node2D
 @onready var handLSprite = $CompositeSprites/HandL
 @onready var handRSprite = $CompositeSprites/HandR
 
-var composite_sprites = preload("res://Assets/character/CompositeSprites.gd")
+@onready var composite_sprites = preload("res://Assets/character/CompositeSprites.gd")
 
 var curr_head = 0
 var curr_neck = 0

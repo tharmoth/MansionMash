@@ -32,24 +32,28 @@ script = ExtResource("1_w7qbp")
 script = SubResource("GDScript_8di5a")
 
 [node name="Head" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
 position = Vector2(-113, 154.072)
 texture = ExtResource("3_ok4vk")
 hframes = 4
 vframes = 3
 
 [node name="Neck" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(-113, 155.066)
+texture_filter = 1
+position = Vector2(-43, 153.078)
 texture = ExtResource("3_ok4vk")
 hframes = 4
 vframes = 3
 
 [node name="HandL" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
 position = Vector2(-151, 143.138)
 texture = ExtResource("3_ok4vk")
 hframes = 4
 vframes = 3
 
 [node name="HandR" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
 position = Vector2(-77, 153.078)
 texture = ExtResource("3_ok4vk")
 hframes = 4
