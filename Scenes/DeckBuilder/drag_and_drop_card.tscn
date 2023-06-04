@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://083cklb3gw4u"]
+
+[ext_resource type="Script" path="res://Scenes/DeckBuilder/DragAndDropCard.gd" id="1_j4ww4"]
+[ext_resource type="Texture2D" uid="uid://bymkrm74030cu" path="res://Assets/Cards/Card_Template.png" id="2_roqb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q8y2"]
+size = Vector2(47, 62.5)
+
+[node name="DragAndDropCard" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_j4ww4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_roqb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_8q8y2")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

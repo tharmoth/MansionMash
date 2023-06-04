@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b245rn6c44dps"]
+[gd_scene load_steps=4 format=3 uid="uid://cggaresjve3kx"]
 
 [ext_resource type="FontFile" uid="uid://db42tov38et3d" path="res://menu/yoster.ttf" id="1_nvgox"]
 [ext_resource type="Script" path="res://Scenes/GUI.gd" id="1_nyw3r"]
+[ext_resource type="AudioStream" uid="uid://dyjx4taph7v44" path="res://menu/pickupCoin.wav" id="3_dg058"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -84,7 +85,7 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_nvgox")
-text = "Settings"
+text = "Build Deck"
 
 [node name="Button3Quit" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -92,5 +93,9 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_nvgox")
 text = "Quit"
 
+[node name="Buttonsfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dg058")
+
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button2Settings" to="." method="_on_button_2_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button3Quit" to="." method="_on_button_3_quit_pressed"]

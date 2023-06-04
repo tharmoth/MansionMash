@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c56vxjdmjkmm6"]
+
+[ext_resource type="PackedScene" uid="uid://083cklb3gw4u" path="res://Scenes/DeckBuilder/drag_and_drop_card.tscn" id="1_qolrm"]
+[ext_resource type="Texture2D" uid="uid://bpx436pgvwbn4" path="res://Assets/Cards/rarity/common.png" id="2_8aymq"]
+[ext_resource type="Script" path="res://Scenes/DeckBuilder/DeckHolder.gd" id="2_26yy3"]
+[ext_resource type="Script" path="res://Scenes/DeckBuilder/Deck.gd" id="4_f38ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpqnk"]
+size = Vector2(45, 59)
+
+[node name="DeckBuilder" type="Node2D"]
+
+[node name="DragAndDropCard" parent="." instance=ExtResource("1_qolrm")]
+position = Vector2(199, 193)
+
+[node name="DragAndDropCard2" parent="." instance=ExtResource("1_qolrm")]
+position = Vector2(229, 339)
+
+[node name="DragAndDropCard3" parent="." instance=ExtResource("1_qolrm")]
+position = Vector2(377, 284)
+
+[node name="TrashPile" type="Area2D" parent="."]
+position = Vector2(87, 236)
+script = ExtResource("2_26yy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="TrashPile"]
+texture = ExtResource("2_8aymq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashPile"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_tpqnk")
+
+[node name="Deck" type="Area2D" parent="."]
+position = Vector2(580, 256)
+script = ExtResource("4_f38ha")
+DragAndDropCard = ExtResource("1_qolrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+texture = ExtResource("2_8aymq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_tpqnk")
+
+[connection signal="body_entered" from="TrashPile" to="TrashPile" method="_on_body_entered"]
+[connection signal="body_exited" from="Deck" to="Deck" method="_on_body_exited"]
