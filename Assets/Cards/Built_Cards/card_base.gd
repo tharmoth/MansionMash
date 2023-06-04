@@ -1,7 +1,7 @@
 extends MarginContainer
 
-var cardDataBase = preload("res://Assets/Cards/Card_Database.gd").new()
-var cardName = cardDataBase.DATA.keys()[RandomNumberGenerator.new().randi_range(0, cardDataBase.DATA.size() - 1)] :
+var cardDataBase = CardDatabase
+var cardName = cardDataBase.obtained_cards[RandomNumberGenerator.new().randi_range(0, cardDataBase.obtained_cards.size() - 1)] :
 	set(value): 
 		cardName = value
 		cardInfo = cardDataBase.DATA[cardName]
