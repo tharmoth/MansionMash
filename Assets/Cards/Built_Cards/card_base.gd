@@ -24,7 +24,7 @@ func _ready():
 	if cardInfo[4] != "NONE":
 		$cardBase/Property1.text = str(cardInfo[4])
 		$cardBase/PropertyValue1.text = str(cardInfo[5])
-	if cardInfo[0] != "trinket":
+	if cardInfo[0] != "trinket" && cardInfo[6]!="NONE":
 		$cardBase/Property2.text = str(cardInfo[6])
 		$cardBase/PropertyValue2.text = str(cardInfo[7])
 	
