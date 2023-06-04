@@ -7,6 +7,7 @@
 size = Vector2(47, 62.5)
 
 [node name="DragAndDropCard" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
 input_pickable = true
 script = ExtResource("1_j4ww4")
 

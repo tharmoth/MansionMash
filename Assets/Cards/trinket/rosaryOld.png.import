@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce57xxb32yamb"
+uid="uid://csllwc1fgl1cj"
 path="res://.godot/imported/rosaryOld.png-8bae41c27c3b29882f18546bc72554aa.ctex"
 metadata={
 "vram_texture": false
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

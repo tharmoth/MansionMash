@@ -11,8 +11,8 @@ func _on_body_entered(body):
 		body.in_deck(self)
 
 func _on_body_exited(body):
-	if body.has_method("in_deck"):
+	if body.has_method("in_deck") && body.card_consumer == self:
 		body.in_deck(null)
 
-func eat_card():
-	consumed_card.emit()
+func eat_card(card):
+	consumed_card.emit(card)

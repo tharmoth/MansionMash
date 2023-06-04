@@ -8,6 +8,7 @@
 size = Vector2(45, 59)
 
 [node name="CardProducer" type="Area2D"]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_vfwsc")
 DragAndDropCard = ExtResource("2_1ko6f")
 

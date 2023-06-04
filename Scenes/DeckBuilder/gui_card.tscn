@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpcgnx7oe1weu"]
+[gd_scene load_steps=2 format=3 uid="uid://ccv7181xxtfwm"]
 
 [ext_resource type="PackedScene" uid="uid://083cklb3gw4u" path="res://Scenes/DeckBuilder/drag_and_drop_card.tscn" id="1_ftxys"]
 

@@ -8,21 +8,16 @@ var click_offset : Vector2
 var card_consumer = null
 var static_card = false
 
-var database = preload("res://Assets/Cards/Card_Database.gd").new()
 
 func _ready():
 	input_event.connect(_on_input_event)
-
-	var cardName = database.DATA.keys()[RandomNumberGenerator.new().randi_range(0, database.DATA.size() - 1)]
-	print(cardName)
-	$CardBase.cardName = cardName
 
 func _physics_process(delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and dragging:
 		dragging = false
 		z_index = 0
 		if card_consumer != null: 
-			card_consumer.eat_card()
+			card_consumer.eat_card(self)
 			
 			# used for cards parented to the gui
 			if static_card:
