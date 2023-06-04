@@ -1,15 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqx8shel4tjef"]
+[gd_scene load_steps=28 format=3 uid="uid://bqx8shel4tjef"]
 
 [ext_resource type="Script" path="res://Scenes/AutoBattler/Autobattler.gd" id="1_n7w6h"]
 [ext_resource type="Texture2D" uid="uid://beolw66xcdnq1" path="res://Assets/FullHealth.png" id="1_qltve"]
 [ext_resource type="TileSet" uid="uid://bqktqe0gftubh" path="res://Scenes/AutoBattler/tile_set.tres" id="2_1mqhk"]
+[ext_resource type="PackedScene" path="res://Scenes/DeckBuilder/gui_card.tscn" id="2_4eany"]
 [ext_resource type="Texture2D" uid="uid://2sbyg8j2yyag" path="res://Assets/Home.png" id="2_gfq32"]
 [ext_resource type="Script" path="res://Scenes/AutoBattler/Player.gd" id="3_5brj8"]
 [ext_resource type="Texture2D" uid="uid://bls1pj0ag0v3y" path="res://Assets/Arrow.png" id="3_t08hx"]
-[ext_resource type="Texture2D" uid="uid://dxkgc4cvw8hw2" path="res://Assets/character/potentialMan2ItemSlotHighlight.png" id="4_itfyf"]
+[ext_resource type="Texture2D" uid="uid://bryecs8ivudac" path="res://Assets/character/PluraSoftIdleSprite1.png" id="7_gktlc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vqd3"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -33,12 +38,99 @@ unicode = 32
 events = [SubResource("InputEventKey_780kb")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cocd6"]
-radius = 40.0
+radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnhii"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(0, 0, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sydcp"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(35, 0, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcirc"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(70, 0, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdruj"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(105, 0, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agrck"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(0, 56, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnhfv"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(35, 56, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6gye"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(70, 56, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq662"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(105, 56, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aoyp"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(0, 112, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dtli"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(35, 112, 35, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_013vn"]
+atlas = ExtResource("7_gktlc")
+region = Rect2(70, 112, 35, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xffn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnhii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sydcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcirc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdruj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agrck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnhfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6gye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq662")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aoyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dtli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_013vn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Autobattler" type="Node2D"]
 script = ExtResource("1_n7w6h")
+gui_card = ExtResource("2_4eany")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="BattlerGUI" type="MarginContainer" parent="CanvasLayer"]
 top_level = true
@@ -79,6 +171,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="HealthIcon" type="TextureRect" parent="CanvasLayer/BattlerGUI/HealthGUI/MarginContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -114,16 +207,29 @@ text = "Continue Forth"
 icon = ExtResource("3_t08hx")
 icon_alignment = 2
 
+[node name="PlayerHand" type="HBoxContainer" parent="CanvasLayer/BattlerGUI"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+metadata/_edit_group_ = true
+
+[node name="UseLabel" type="Label" parent="CanvasLayer/BattlerGUI/PlayerHand"]
+layout_mode = 2
+text = "Equipped"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1152, 0)
 
 [node name="MansionTileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
 tile_set = ExtResource("2_1mqhk")
 format = 2
 layer_0/name = "Background"
-layer_0/tile_data = PackedInt32Array(393216, 131072, 2, 393217, 131072, 2, 393218, 131072, 2, 393219, 131072, 2, 393220, 131072, 2, 393221, 131072, 2, 393222, 131072, 2, 393223, 131072, 2, 393224, 131072, 2, 393225, 131072, 2, 393226, 131072, 2, 393227, 131072, 2, 393228, 131072, 2, 393229, 131072, 2, 393230, 131072, 2, 393231, 131072, 2, 393232, 131072, 2, 458768, 0, 3, 458767, 0, 3, 458766, 0, 3, 458765, 0, 3, 458764, 0, 3, 458763, 0, 3, 458762, 0, 3, 458761, 0, 3, 458760, 0, 3, 458759, 0, 3, 458758, 0, 3, 458757, 0, 3, 458756, 0, 3, 458755, 0, 3, 458754, 0, 3, 458753, 0, 3, 458752, 0, 3, 524288, 65536, 2, 589824, 65536, 2, 589825, 65536, 2, 589826, 65536, 2, 589827, 65536, 2, 589828, 65536, 2, 589829, 65536, 2, 589830, 65536, 2, 589831, 65536, 2, 589832, 65536, 2, 589833, 65536, 2, 589834, 65536, 2, 589835, 65536, 2, 589836, 65536, 2, 589837, 65536, 2, 589838, 65536, 2, 589839, 65536, 2, 589840, 65536, 2, 524304, 65536, 2, 524303, 65536, 2, 524302, 65536, 2, 524301, 65536, 2, 524300, 65536, 2, 524299, 65536, 2, 524298, 65536, 2, 524297, 65536, 2, 524296, 65536, 2, 524295, 65536, 2, 524294, 65536, 2, 524293, 65536, 2, 524292, 65536, 2, 524291, 65536, 2, 524290, 65536, 2, 524289, 65536, 2, 327680, 196608, 0, 262144, 196608, 0, 196608, 196608, 0, 131072, 196608, 0, 65536, 196608, 0, 0, 196608, 0, 1, 196608, 0, 2, 196608, 0, 3, 196608, 0, 65539, 196608, 0, 65540, 262144, 0, 16, 262144, 0, 327696, 196608, 0, 327695, 196608, 0, 327694, 196608, 0, 327693, 196608, 0, 327692, 196608, 0, 327691, 196608, 0, 327690, 196608, 0, 262148, 196608, 0, 262147, 196608, 0, 262146, 196608, 0, 327682, 196608, 0, 327681, 196608, 0, 327683, 0, 1, 327684, 65536, 1, 327685, 196608, 0, 327686, 196608, 0, 327687, 196608, 0, 327688, 196608, 0, 327689, 196608, 0, 131088, 196608, 0, 65552, 262144, 0, 4, 262144, 0, 65538, 196608, 0, 131074, 196608, 0, 131073, 196608, 0, 65537, 196608, 0, 196610, 196608, 0, 262145, 196608, 0, 196609, 196608, 0, 196612, 196608, 0, 196611, 196608, 0, 131076, 262144, 0, 131075, 196608, 0, 17, 196608, 0, 65553, 196608, 0, 131089, 196608, 0, 327697, 196608, 0, 393233, 131072, 2, 458769, 0, 3, 524305, 65536, 2, 589841, 65536, 2, 131087, 262144, 0, 131086, 262144, 0, 131085, 262144, 0, 131084, 196608, 0, 131083, 262144, 0, 131082, 262144, 0, 131081, 262144, 0, 131080, 262144, 0, 131079, 262144, 0, 131078, 262144, 0, 131077, 262144, 0, 65541, 262144, 0, 65542, 262144, 0, 65543, 262144, 0, 65544, 262144, 0, 65545, 262144, 0, 65546, 262144, 0, 65547, 262144, 0, 65548, 262144, 0, 65549, 262144, 0, 65550, 262144, 0, 15, 262144, 0, 14, 262144, 0, 13, 262144, 0, 12, 262144, 0, 11, 262144, 0, 8, 262144, 0, 7, 262144, 0, 6, 262144, 0, 5, 262144, 0, 65551, 262144, 0, 10, 262144, 0, 9, 262144, 0, 262149, 196608, 0, 196613, 196608, 0, 262156, 196608, 0, 196620, 196608, 0, 262154, 196608, 0, 196618, 196608, 0, 262155, 196608, 0, 196619, 196608, 0, 262161, 196608, 0, 196625, 196608, 0, 262153, 196608, 0, 262152, 196608, 0, 262151, 196608, 0, 262150, 196608, 0, 196614, 196608, 0, 196615, 196608, 0, 196616, 196608, 0, 196617, 196608, 0, 196621, 196608, 0, 196622, 196608, 0, 196623, 196608, 0, 196624, 196608, 0, 262160, 196608, 0, 262159, 196608, 0, 262158, 196608, 0, 262157, 196608, 0)
+layer_0/tile_data = PackedInt32Array(393216, 131072, 2, 393217, 131072, 2, 393218, 131072, 2, 393219, 131072, 2, 393220, 131072, 2, 393221, 131072, 2, 393222, 131072, 2, 393223, 131072, 2, 393224, 131072, 2, 393225, 131072, 2, 393226, 131072, 2, 393227, 131072, 2, 393228, 131072, 2, 393229, 131072, 2, 393230, 131072, 2, 393231, 131072, 2, 393232, 131072, 2, 458768, 0, 3, 458767, 0, 3, 458766, 0, 3, 458765, 0, 3, 458764, 0, 3, 458763, 0, 3, 458762, 0, 3, 458761, 0, 3, 458760, 0, 3, 458759, 0, 3, 458758, 0, 3, 458757, 0, 3, 458756, 0, 3, 458755, 0, 3, 458754, 0, 3, 458753, 0, 3, 458752, 0, 3, 524288, 65536, 2, 589824, 65536, 2, 589825, 65536, 2, 589826, 65536, 2, 589827, 65536, 2, 589828, 65536, 2, 589829, 65536, 2, 589830, 65536, 2, 589831, 65536, 2, 589832, 65536, 2, 589833, 65536, 2, 589834, 65536, 2, 589835, 65536, 2, 589836, 65536, 2, 589837, 65536, 2, 589838, 65536, 2, 589839, 65536, 2, 589840, 65536, 2, 524304, 65536, 2, 524303, 65536, 2, 524302, 65536, 2, 524301, 65536, 2, 524300, 65536, 2, 524299, 65536, 2, 524298, 65536, 2, 524297, 65536, 2, 524296, 65536, 2, 524295, 65536, 2, 524294, 65536, 2, 524293, 65536, 2, 524292, 65536, 2, 524291, 65536, 2, 524290, 65536, 2, 524289, 65536, 2, 327680, 196608, 0, 262144, 196608, 0, 196608, 196608, 0, 131072, 196608, 0, 65536, 196608, 0, 0, 196608, 0, 1, 196608, 0, 2, 196608, 0, 3, 196608, 0, 65539, 196608, 0, 65540, 262144, 0, 16, 262144, 0, 327696, 196608, 0, 327695, 196608, 0, 327694, 196608, 0, 327693, 196608, 0, 327692, 196608, 0, 327691, 196608, 0, 327690, 196608, 0, 262148, 196608, 0, 262147, 196608, 0, 262146, 196608, 0, 327682, 196608, 0, 327681, 196608, 0, 327683, 0, 1, 327684, 65536, 1, 327685, 196608, 0, 327686, 196608, 0, 327687, 196608, 0, 327688, 196608, 0, 327689, 196608, 0, 131088, 196608, 0, 65552, 262144, 0, 4, 262144, 0, 65538, 196608, 0, 131074, 196608, 0, 131073, 196608, 0, 65537, 196608, 0, 196610, 196608, 0, 262145, 196608, 0, 196609, 196608, 0, 196612, 196608, 0, 196611, 196608, 0, 131076, 262144, 0, 131075, 196608, 0, 17, 196608, 0, 65553, 196608, 0, 131089, 196608, 0, 327697, 196608, 0, 393233, 131072, 2, 458769, 0, 3, 524305, 65536, 2, 589841, 65536, 2, 131087, 262144, 0, 131086, 262144, 0, 131085, 262144, 0, 131084, 196608, 0, 131083, 262144, 0, 131082, 262144, 0, 131081, 262144, 0, 131080, 262144, 0, 131079, 262144, 0, 131078, 262144, 0, 131077, 262144, 0, 65541, 262144, 0, 65542, 262144, 0, 65543, 262144, 0, 65544, 262144, 0, 65545, 262144, 0, 65546, 262144, 0, 65547, 262144, 0, 65548, 262144, 0, 65549, 262144, 0, 65550, 262144, 0, 15, 262144, 0, 14, 262144, 0, 13, 262144, 0, 12, 262144, 0, 11, 262144, 0, 8, 262144, 0, 7, 262144, 0, 6, 262144, 0, 5, 262144, 0, 65551, 262144, 0, 10, 262144, 0, 9, 262144, 0, 262149, 196608, 0, 196613, 196608, 0, 262156, 6, 0, 196620, 196608, 0, 262154, 196608, 0, 196618, 196608, 0, 262155, 196608, 0, 196619, 196608, 0, 262161, 196608, 0, 196625, 196608, 0, 262153, 196608, 0, 262152, 6, 0, 262151, 196608, 0, 262150, 196608, 0, 196614, 196608, 0, 196615, 196608, 0, 196616, 196608, 0, 196617, 196608, 0, 196621, 196608, 0, 196622, 196608, 0, 196623, 196608, 0, 196624, 196608, 0, 262160, 6, 0, 262159, 196608, 0, 262158, 196608, 0, 262157, 196608, 0)
 layer_1/name = "Decorations"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -134,7 +240,9 @@ layer_1/tile_data = PackedInt32Array(262154, 2, 0, 262146, 2, 0, 262150, 2, 0, 2
 
 [node name="Player" type="Area2D" parent="."]
 z_index = 1
+texture_filter = 1
 position = Vector2(268, 389)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("3_5brj8")
 metadata/_edit_group_ = true
 
@@ -142,14 +250,16 @@ metadata/_edit_group_ = true
 z_index = 1
 shape = SubResource("CircleShape2D_cocd6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("4_itfyf")
-
 [node name="HitTimer" type="Timer" parent="Player"]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_1xffn")
+autoplay = "default"
+frame_progress = 0.441168
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 100
@@ -159,6 +269,7 @@ motion_scale = Vector2(1.2, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="MansionTileMap" type="TileMap" parent="ParallaxBackground2/ParallaxLayer2"]
+texture_filter = 1
 tile_set = ExtResource("2_1mqhk")
 format = 2
 layer_0/name = "Background"
