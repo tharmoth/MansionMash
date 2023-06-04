@@ -6,7 +6,6 @@
 [node name="CardBase" type="MarginContainer"]
 offset_right = 48.0
 offset_bottom = 64.0
-scale = Vector2(4, 4)
 pivot_offset = Vector2(24, 32)
 script = ExtResource("1_l7ulf")
 
