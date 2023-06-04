@@ -16,6 +16,7 @@ z_index = 1
 shape = SubResource("CircleShape2D_cocd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_gsmqb")
 
 [node name="HitTimer" type="Timer" parent="."]

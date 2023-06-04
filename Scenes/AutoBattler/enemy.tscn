@@ -16,6 +16,9 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_0a3ts")
 bg_color = Color(1, 0, 0, 1)
 
 [node name="Enemy" type="Area2D"]
+top_level = true
+z_index = 1
+z_as_relative = false
 position = Vector2(636, 368)
 script = ExtResource("1_hueav")
 metadata/_edit_group_ = true

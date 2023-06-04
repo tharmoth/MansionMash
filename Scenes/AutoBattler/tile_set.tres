@@ -1,6 +1,8 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://bqktqe0gftubh"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bqktqe0gftubh"]
 
 [ext_resource type="Texture2D" uid="uid://br2h27lhyh5gl" path="res://Assets/Mansion Tiles.png" id="1_mnhjp"]
+[ext_resource type="Texture2D" uid="uid://boxbjqtcgf4dp" path="res://Assets/SkullyPainting.png" id="2_we514"]
+[ext_resource type="Texture2D" uid="uid://dkbis14dm3lr4" path="res://Assets/CandelabraLamp.png" id="3_k2hbk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2yqc0"]
 tile_data = PackedInt32Array(0, 196608, 0, 65536, 196608, 0, 131072, 196608, 0, 196608, 196608, 0, 262144, 196608, 0, 327680, 196608, 0, 393216, 131072, 2, 458752, 0, 3, 524288, 65536, 2, 589824, 65536, 2)
@@ -45,7 +47,24 @@ texture_region_size = Vector2i(64, 64)
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15jwf"]
+texture = ExtResource("2_we514")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbbg5"]
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngkeh"]
+texture = ExtResource("3_k2hbk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+
 [resource]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_0573f")
+sources/2 = SubResource("TileSetAtlasSource_15jwf")
+sources/3 = SubResource("TileSetAtlasSource_bbbg5")
+sources/4 = SubResource("TileSetAtlasSource_ngkeh")
 pattern_0 = SubResource("TileMapPattern_2yqc0")
