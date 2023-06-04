@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c56vxjdmjkmm6"]
 
 [ext_resource type="Script" path="res://Scenes/DeckBuilder/deck_builder_gui.gd" id="1_5wvss"]
-[ext_resource type="PackedScene" path="res://Scenes/DeckBuilder/gui_card.tscn" id="2_wru6x"]
+[ext_resource type="PackedScene" uid="uid://ccv7181xxtfwm" path="res://Scenes/DeckBuilder/gui_card.tscn" id="2_wru6x"]
 [ext_resource type="TileSet" uid="uid://bqktqe0gftubh" path="res://Scenes/AutoBattler/tile_set.tres" id="3_uvits"]
-[ext_resource type="PackedScene" path="res://Scenes/DeckBuilder/card_producer.tscn" id="4_5yi47"]
+[ext_resource type="PackedScene" uid="uid://b8ig80oj0ie3a" path="res://Scenes/DeckBuilder/card_producer.tscn" id="4_5yi47"]
 [ext_resource type="Texture2D" uid="uid://2sbyg8j2yyag" path="res://Assets/Home.png" id="5_n3p47"]
-[ext_resource type="PackedScene" path="res://Scenes/DeckBuilder/card_consumer.tscn" id="6_ish2i"]
+[ext_resource type="PackedScene" uid="uid://byn4h5l16uu8l" path="res://Scenes/DeckBuilder/card_consumer.tscn" id="6_ish2i"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
