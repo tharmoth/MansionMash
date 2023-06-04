@@ -1,11 +1,11 @@
 extends Node2D
 
 @onready var headSprite = $CompositeSprites/Head
-@onready var neckSprite = $CompositeSprite/Neck
+@onready var neckSprite = $CompositeSprites/Neck
 @onready var handLSprite = $CompositeSprites/HandL
 @onready var handRSprite = $CompositeSprites/HandR
 
-@onready var composite_sprites = preload("res://Assets/character/CompositeSprites.gd")
+@onready var composite_sprites = preload("res://Assets/character/CompositeSprites.gd").new()
 
 var curr_head = 0
 var curr_neck = 0
@@ -15,8 +15,8 @@ var curr_right = 0
 func _ready():
 	headSprite.texture = composite_sprites.head_spritesheet[0]
 	neckSprite.texture = composite_sprites.neck_spritesheet[0]
-	handLSprite.texture = composite_sprites.left_spritesheet[0]
-	handRSprite.texture = composite_sprites.right_spritesheet[0]
+	handLSprite.texture = composite_sprites.handL_spritesheet[0]
+	handRSprite.texture = composite_sprites.handR_spritesheet[0]
 	
 
 func _on_hat_dropped():

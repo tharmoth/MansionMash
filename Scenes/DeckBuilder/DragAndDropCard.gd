@@ -10,7 +10,8 @@ var static_card = false
 
 func _ready():
 	input_event.connect(_on_input_event)
-	$CardBase.cardName = "rosaryOld"
+	if RandomNumberGenerator.new().randi_range(0, 1) == 0:
+		$CardBase.cardName = "rosaryOld"
 
 func _physics_process(delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and dragging:

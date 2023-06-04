@@ -1,7 +1,7 @@
 extends Node
 
 var head_spritesheet = { 
-	0: preload("res://Assets/character/Hat1.png")
+ 	0: preload("res://Assets/character/Hat1.png")
 }
 
 var neck_spritesheet = {
